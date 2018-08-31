@@ -41,13 +41,13 @@ printDes() {
 	# cat <(printf "prefix") <cat() <(printf "subfix")
 	seq -s $seperator $des_length | tr -d '[:digit:]' | cat <(printf "\n#") <(cat) <(printf "\n") >> $filename
 	printf "# $des\n" >> $filename
-	seq -s $seperator $des_length | tr -d '[:digit:]' | cat <(printf "#") <(cat) <(printf "\n") >> $filename
+	seq -s $seperator $des_length | tr -d '[:digit:]' | cat <(printf "#") <(cat) <(printf "\n\n\n") >> $filename
 }
 
 
 printDes "$2"
 
-
+vim $filename
 
 
 
@@ -57,10 +57,6 @@ printDes "$2"
 # $2
 # ------------------------
 #EOL
-
-
-
-
 
 
 # Or we can use while loop to create all the seperators to contain argument 2
@@ -79,4 +75,3 @@ printDes "$2"
 #printf '*%.0s' {1..${des_length}"}
 
 
-cat $filename
