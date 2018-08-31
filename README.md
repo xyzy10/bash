@@ -19,7 +19,6 @@ How to use
 ----------
 sh_template.sh
   Create executable shell template.
-    
     ```
     sh_template new_script_name "Description about the script"
     ```
