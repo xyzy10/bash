@@ -13,6 +13,9 @@ How to install
 
 How to use
 ----------
-  sh_template new_script_name "Description about the script"
+sh_template.sh
+  Create executable shell template.
+    
+    sh_template new_script_name "Description about the script"
 
 
