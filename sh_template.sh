@@ -16,7 +16,7 @@ touch $filename
 chmod +x $filename
 
 # -e flag allow echo to evaluate escaped characters.
-echo -e "#!/usr/local/bin/bash\n" > $1.sh
+echo -e "#!/usr/bin/env bash\n" > $1.sh
 
 
 # Step 2:
