@@ -11,12 +11,12 @@ then
 fi
 
 # create a file
-filename=$1.sh
-touch $filename
-chmod +x $filename
+FILE_NAME=$1.sh
+touch $FILE_NAME
+chmod +x $FILE_NAME
 
 # -e flag allow echo to evaluate escaped characters.
-echo -e "#!/usr/bin/env bash\n" > $1.sh
+echo -e "#!/usr/bin/env bash\n" > $FILE_NAME 
 
 
 # Step 2:
@@ -30,24 +30,24 @@ fi
 # This fucntion adds a box to contain the description
 # eg printDes "hello world"
 printDes() {
-	local des=$1
-	let local des_length=${#des}+2
-	local seperator='-'
+	local DES=$1
+	let local DES_LENGTH=${#DES}+3
+	local SEPERATOR='-'
 
 	# seq -s * 8  | tr -d '[:digit:]' will repeatly print * sign 8 times 
 	# seq -s * 8 outputs 1 to 8 and add seperator * between each output, resulting 1*2*3*4* etc
 	# then we use the translate tr command to remove all the digits from preview output resulting just ********
 	# then we pipe it to cat to add prefix and subfix to the output
 	# cat <(printf "prefix") <cat() <(printf "subfix")
-	seq -s $seperator $des_length | tr -d '[:digit:]' | cat <(printf "\n#") <(cat) <(printf "\n") >> $filename
-	printf "# $des\n" >> $filename
-	seq -s $seperator $des_length | tr -d '[:digit:]' | cat <(printf "#") <(cat) <(printf "\n\n\n") >> $filename
+	seq -s $SEPERATOR $DES_LENGTH | tr -d '[:digit:]' | cat <(printf "\n#") <(cat) <(printf "") >> $FILE_NAME
+	printf "# $DES\n" >> $FILE_NAME
+	seq -s $SEPERATOR $DES_LENGTH | tr -d '[:digit:]' | cat <(printf "#") <(cat) <(printf "\n\n\n") >> $FILE_NAME
 }
 
 
 printDes "$2"
 
-vim $filename
+vim $FILE_NAME
 
 
 
