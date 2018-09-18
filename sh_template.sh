@@ -31,7 +31,7 @@ fi
 # eg printDes "hello world"
 printDes() {
 	local DES=$1
-	let local DES_LENGTH=${#DES}+3
+	let local DES_LENGTH=${#DES}+2
 	local SEPERATOR='-'
 
 	# seq -s * 8  | tr -d '[:digit:]' will repeatly print * sign 8 times 
@@ -39,7 +39,7 @@ printDes() {
 	# then we use the translate tr command to remove all the digits from preview output resulting just ********
 	# then we pipe it to cat to add prefix and subfix to the output
 	# cat <(printf "prefix") <cat() <(printf "subfix")
-	seq -s $SEPERATOR $DES_LENGTH | tr -d '[:digit:]' | cat <(printf "\n#") <(cat) <(printf "") >> $FILE_NAME
+	seq -s $SEPERATOR $DES_LENGTH | tr -d '[:digit:]' | cat <(printf "\n#") <(cat) <(printf "\n") >> $FILE_NAME
 	printf "# $DES\n" >> $FILE_NAME
 	seq -s $SEPERATOR $DES_LENGTH | tr -d '[:digit:]' | cat <(printf "#") <(cat) <(printf "\n\n\n") >> $FILE_NAME
 }
