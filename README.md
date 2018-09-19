@@ -27,7 +27,7 @@ sh_template new_script_name "Description about the script"
 ```
 
 tar_each.sh
-  It will gzip each file inside the the given dir, and put into a new directory at the same level call compressed_log. It will skip the common compression extension like .tgz .zip .7z .rar .bz2 .gz etc (for detail see the tar_each.sh)
+  It will gzip each file inside the the given dir, and put into a new directory at the same level call compressed. It will skip the common compression extension like .tgz .zip .7z .rar .bz2 .gz etc (for detail see the tar_each.sh)
 
 ```
 tar_each dir/
