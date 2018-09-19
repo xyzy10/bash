@@ -5,7 +5,7 @@ How to install
 --------------
   1. Copy the script to a dir you like, make sure it is executable.
 ```
-chmod +x sh_template.sh
+chmod +x *.sh
 cp sh_template.sh ~/Documents/Scripts/bash
 ```
       
@@ -15,7 +15,7 @@ ln -s ~/Documents/Scripts/bash/sh_template.sh /usr/local/bin/sh_template
 ```
 
 ```
-ln -s ~/Documents/Scripts/bash/tar_log.sh /usr/local/bin/tar_log
+ln -s ~/Documents/Scripts/bash/tar_each.sh /usr/local/bin/tar_each
 ```
 
 
@@ -27,4 +27,9 @@ sh_template.sh
 sh_template new_script_name "Description about the script"
 ```
 
+tar_each.sh
+  It will gzip each file inside the the given dir, and put into a new directory at the same level call compressed_log. It will skip the following extension:.tgz
 
+```
+tar_each dir/
+```
