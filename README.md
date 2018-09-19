@@ -14,6 +14,10 @@ cp sh_template.sh ~/Documents/Scripts/bash
 ln -s ~/Documents/Scripts/bash/sh_template.sh /usr/local/bin/sh_template
 ```
 
+```
+ln -s ~/Documents/Scripts/bash/tar_log.sh /usr/local/bin/tar_log
+```
+
 
 How to use
 ----------
