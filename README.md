@@ -18,7 +18,6 @@ ln -s ~/Documents/Scripts/bash/sh_template.sh /usr/local/bin/sh_template
 ln -s ~/Documents/Scripts/bash/tar_each.sh /usr/local/bin/tar_each
 ```
 
-
 How to use
 ----------
 sh_template.sh
@@ -28,7 +27,7 @@ sh_template new_script_name "Description about the script"
 ```
 
 tar_each.sh
-  It will gzip each file inside the the given dir, and put into a new directory at the same level call compressed_log. It will skip the following extension:.tgz
+  It will gzip each file inside the the given dir, and put into a new directory at the same level call compressed_log. It will skip the common compression extension like .tgz .zip .7z .rar .bz2 .gz etc (for detail see the tar_each.sh)
 
 ```
 tar_each dir/
