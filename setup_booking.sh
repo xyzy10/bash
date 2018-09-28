@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 #--------------------------------------------------------------------
 # Create new booking repo from existing template on remote and local
 #--------------------------------------------------------------------
