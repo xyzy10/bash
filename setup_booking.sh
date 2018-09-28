@@ -39,7 +39,7 @@ git clone s84.ok.ubc.ca:/srv/git/"$BOOKING_TEMPLATE_NAME".git
 if [[ "$?" -eq 0 && -d "$BOOKING_TEMPLATE_NAME" ]]; then
 	mv $BOOKING_TEMPLATE_NAME $REPO_NAME
 	cd $REPO_NAME
-	git remote set-url origin yyong01@s84.ok.ubc.ca:/srv/git/"$REPO_NAME".git
+	git remote set-url origin s84.ok.ubc.ca:/srv/git/"$REPO_NAME".git
 	git reset --hard base-code
 	git push origin master
 
