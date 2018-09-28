@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # This script takes repo name as argument and creates a new repo under /srv/git directory
-# the repo name must only contain numeric and alphabetic value
+# the repo name must only contain numeric, alphabetic and dash sign(not start with) value
 
 if [ -z "$1" ]; then
 	echo "Please supply repo name as first argument"
@@ -10,8 +10,9 @@ fi
 
 REPO_NAME="$1"
 
-# Only allow numeric and alphabetic value as new repo name.
-if [[ $REPO_NAME =~ ^[a-zA-Z0-9]+$ ]]; then
+# Only allow numeric, alphabetic and dash sign value as new repo name.
+# Also make sure the dash sign is not at the front.
+if [[ "$REPO_NAME" =~ ^[a-zA-Z0-9\-]+$ && ! "$REPO_NAME" =~ ^- ]]; then
 	DIR_NAME="/srv/git/${REPO_NAME}.git"	
 	
 	# Need to make sure we don't re initlize the existing repo.
