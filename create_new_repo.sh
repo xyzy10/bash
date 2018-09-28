@@ -18,7 +18,7 @@ if [[ "$REPO_NAME" =~ ^[a-zA-Z0-9\-]+$ && ! "$REPO_NAME" =~ ^- ]]; then
 	# Need to make sure we don't re initlize the existing repo.
 	# Checking the directory exit and not a symbolic link.
 	if [[ -d "$DIR_NAME" && ! -L "$DIR_NAME" ]]; then
-		echo "Error: Repo ${DIR_NAME} already exited."
+		echo "Error: Repo ${DIR_NAME} already existed."
 		exit 4
 	fi
 
@@ -33,6 +33,6 @@ if [[ "$REPO_NAME" =~ ^[a-zA-Z0-9\-]+$ && ! "$REPO_NAME" =~ ^- ]]; then
 		exit 3
 	fi
 else
-	echo "Repo name can only contains numeric and alphabetic value."
+	echo "Repo name must be alphanumeric."
 	exit 2
 fi

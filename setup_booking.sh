@@ -1,12 +1,10 @@
-#!/usr/bin/env bash
-
 #--------------------------------------------------------------------
 # Create new booking repo from existing template on remote and local
 #--------------------------------------------------------------------
 
 createRemoteRepo() {
 	# Run the create script on s84 and output the message to stdout.
-	ssh yyong01@s84.ok.ubc.ca /UBC-O/yyong01/scripts/create_new_repo.sh $1
+	ssh s84.ok.ubc.ca /UBC-O/yyong01/scripts/create_new_repo.sh $1
 	
 	# Get the exit code from remote server.
 	return $?
@@ -34,7 +32,7 @@ if ! [ "$EXIT_CODE" -eq 0 ]; then
 fi
 
 # Let's clone the template repo to local first.
-git clone yyong01@s84.ok.ubc.ca:/srv/git/"$BOOKING_TEMPLATE_NAME".git
+git clone s84.ok.ubc.ca:/srv/git/"$BOOKING_TEMPLATE_NAME".git
 
 # If we have not mess anything up at this point, then let's change the remote host
 # origin for the newly created repo. So we don't override the origin repo accidentally with our push command.
@@ -42,7 +40,8 @@ if [[ "$?" -eq 0 && -d "$BOOKING_TEMPLATE_NAME" ]]; then
 	mv $BOOKING_TEMPLATE_NAME $REPO_NAME
 	cd $REPO_NAME
 	git remote set-url origin yyong01@s84.ok.ubc.ca:/srv/git/"$REPO_NAME".git
-	git reset --hard 9cd775972f475434b832260edfff7ad4ab8baef9
+	git reset --hard base-code
+	git push origin master
 
 	if [[ "$?" -eq 0 ]]; then
 		echo "All operation completed."
