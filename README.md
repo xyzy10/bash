@@ -32,3 +32,10 @@ tar_each.sh
 ```
 tar_each dir/
 ```
+
+sqlbench.sh
+  This script utilize mysqlslap tool to perform sql benchmarking. Useful when comparing two servers for performance analysing. Just follow the screen options to select database and their tables for benchmarking. Makesure you have sql user name, password ready, and mysqlslap installed on your server.
+
+```
+sqlbench.sh
+```
